@@ -40,13 +40,35 @@ Tablas:
 		<th>N&uacute;mero</th>
 		<th>Nombre</th>
 		<th>N.Control</th>
+		<th rowspan=2>Algo &nbsp;</th>
 	</tr>
 	<tr>
 		<td>1</td>
 		<td>Mi nombre</td>
 		<td>12345678</td>
+		<!-- <td colspan=2>12345678</td> -->
 	</tr>
 </table>
+Imagen <br>
+Imagen por URL
+<img src="https://www.google.com.mx/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png" width="150" height="">
+Imagen en archivo propio (carpetas del proyecto)
+<img src="logoGoogle.png" width="50">  
+
+Formularios<br>
+<!-- 
+action = página que procesa la información
+method = cómo se envía la información
+	1) get,Get,GET
+	2) post,Post,POST
+ -->
+<form action="paginadementiras.html" method="POST" id="formaCaptura">
+	<input type="text" name="nombre" id="nombre">
+	<input type="text" name="apellido" id="apellido">
+	<input type="submit" value="Aceptar">
+	<input type="reset">
+</form>
+<marquee>Esto no se usa</marquee>
 </body>
 </html>
 
