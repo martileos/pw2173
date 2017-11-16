@@ -25,6 +25,14 @@ form input[type="button"]{
 	color:white;
 	width: 70px;
 }
+#btnCientifica{
+	background: orange;
+	border-radius: 5px;
+	color: black;
+	height: 50px;
+	font-weight: bold;
+	width: 100px;
+}
 
 
 
