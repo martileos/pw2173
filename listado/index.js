@@ -5,6 +5,7 @@ const app=require('electron').app;
 const path=require('path');
 const url=require('url');
 const $ = require('jquery');
+let PantallaDetalle;
 
 function datos(nombre,genero,foto,direccion,telefono)
 {
@@ -44,9 +45,20 @@ function inicia()
 }
 
 function botonDetalle(){
-	alert(usuarios[this.id].nombre);
-	alert(usuarios[this.id].genero);
-	alert(usuarios[this.id].foto);
+	// alert(usuarios[this.id].nombre);
+	require('electron').remote.getGlobal('infoUsuarios').nombre=usuarios[this.id].nombre;
+	require('electron').remote.getGlobal('infoUsuarios').genero=usuarios[this.id].genero;
+	require('electron').remote.getGlobal('infoUsuarios').foto=usuarios[this.id].foto;
+	require('electron').remote.getGlobal('infoUsuarios').direccion=usuarios[this.id].direccion;
+	require('electron').remote.getGlobal('infoUsuarios').telefono=usuarios[this.id].telefono;
+	PantallaDetalle = new BrowserWindow({width:320,height:425});
+	PantallaDetalle.loadURL(url.format({
+		pathname: path.join(__dirname,'detalleusuarios.html'),
+		protocol: 'file',
+		slashes: true
+	}))
+	// PantallaDetalle.webContents.openDevTools();
+	PantallaDetalle.show();
 }
 
 $("body").on("click","li > button",botonDetalle);
