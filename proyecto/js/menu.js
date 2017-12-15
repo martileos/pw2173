@@ -91,7 +91,6 @@ var iniciaMenu = function(){
 			 data:parametros,
 			 success:function(data){
 			 	if(data.respuesta == true){
-			 		alert(data.tabla);
 			 		$("#tblConsultas").html(data.tabla);
 			 	}else{
 			 		alert("No hay información que mostrar");
